@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change and select event</title>
+</head>
+<body>
+    <main>
+        <label>
+            Choose and ice cream flavour:
+            <select name="ice-cream" id="ice-cream">
+                <option value="">Select one...</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="vanilla">Vanilla</option>
+                <option value="strawberry">Strawberry</option>
+            </select>
+        </label>
+
+        <div class="result"></div>
+        
+        <hr>
+        <hr>
+
+        <!-- Select Event -->
+
+        <input type="text" value="Try selecting some text in this element">
+        <p id="log"></p>
+
+    </main>
+    
+    <script>
+        const selectElement = document.querySelector('.ice-cream');
+        selectElement.addEventListener('change', (e)=>{
+            const result = document.querySelector('.result');
+            result.textContent = `You like ${e.target.value}`;
+        });
+
+        // select event
+        const input = document.querySelector('input');
+        input.addEventListener('select', (e)=>{
+            const log = document.querySelector("#log");
+            const selection = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd);
+            log.textContent = `You selected ${selection}`;
+        });
+    </script>
+
+
+</body>
+</html>

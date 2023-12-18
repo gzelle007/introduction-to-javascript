@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Principles</title>
+</head>
+<body>
+
+    <!-- Add internal js file -->
+    <script>
+        // add js code here
+
+        //variables = let and const (either var)
+        // define let variable below:
+        let message;
+
+        // define variable to integer
+        let age = 26;
+        
+        // define variable to float
+        let salary = 234.56;
+
+        // define big integer - BIgInt
+        // n at the end states that it is an integer
+        const cardID = 20210412311584658461315n;
+
+        // define variable to string
+        let name = "Jack";
+
+        // Output
+        console.log("Hello" + name);
+
+        // Output with backtick
+        console.log(`Hello ${name}`);
+
+        // Boolean type
+        let is_adult = true;
+
+        // Two special values: null and undefined
+
+        // undefined example
+        let emailAddress;
+        console.log(emailAddress);
+
+
+        // Array
+        // let names = new Array();
+        let names =[];
+        // a method to add a new data to our array
+        names.push("Jack");
+        names.push("Rose");
+        // displays output
+        console.log(names);
+        // displays number 1 of the array (Rose)
+        console.log(names[1]);
+
+        // a method to remove one data from our array
+        // names.pop("Jack");
+        // console.log(names);
+
+        // Shift method to remove the first data (jack)
+        names.shift();
+        console.log(names);
+
+        // Unshift to add one data to the beginning
+        names.unshift("Ava", "Cody");
+        console.log(names);
+
+
+        // the most used datatype in js
+        // Object is a collection of data in the form of key-value pairs
+
+        const person = {
+            name: "Steven",
+            ID: 20201289,
+            getDetails: function (){
+                return`${this.name} with ID ${this.ID}`
+            }
+        };
+        // using "dot operation to retrieve one data"
+        console.log(person.getDetails());
+
+        // using "array notation" to retrieve one data
+        console.log(person["name"]);
+        console.log(person["getDetails"]());
+
+
+        // Create an empty object
+        let student ={};
+        student.name = "Jack";
+        student.age = 27
+
+        console.log(student);
+
+        // if, while and for
+
+        // if-else statement
+        if(is_adult){
+            console.log("You are fine to join the race");
+        }
+        else{
+            console.log("You lost, go home and sleep");
+        }
+
+        // while
+        let count = 0;
+        let sum = 0;
+        // get the sum of 1 to 50
+        while(count<=50){
+            count++; //count = count + 1
+            sum += count;
+        }
+
+        console.log(`The sum from 1 to 50 is ${sum}`);
+
+        // for function that does the same as while above
+        let sum_by_for = 0;
+        for(let i=0; 1<=50; i++){
+            sum_by_for += i;
+        }
+        console.log(sum_by_for);
+
+        // function and scope
+        // def showMessage(): -- python
+        function showMessage(){
+            var studentID = 20210034;
+            console.log("Hello World");
+        }
+
+        showMessage();
+        console.log(studentID);
+
+    </script>
+
+    <!-- Add external js file -->
+    <script src=""></script>
+    
+</body>
+</html>
